@@ -136,6 +136,7 @@ parser.add_argument('--step_size',type=int,default=100,help='step_size')
 
 
 args = parser.parse_args()
+args.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 device = torch.device(args.device)
 torch.set_num_threads(3)
 

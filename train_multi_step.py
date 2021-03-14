@@ -69,6 +69,7 @@ parser.add_argument('--runs',type=int,default=10,help='number of runs')
 
 
 args = parser.parse_args()
+args.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 torch.set_num_threads(3)
 
 
